@@ -83,18 +83,24 @@ def get_dictionary(dictionary_file):
     
     with open(dictionary_file) as f:
         return [w.strip().upper() for w in f]
+        
+def display_words(words):
+    for word in words:
+        print(word)
+    print("Found %s words" % len(words))
     
 def main():
     """
     This is the function that will run the whole project
     """
     
-    grid = make_grid(3,3)
+    grid = make_grid(2,2)
     dictionary = get_dictionary('words.txt')
     words = search(grid,dictionary)
-    for word in words:
-        print(word)
-    print("Found %s words" % len(words))
+    # for word in words:
+    #     print(word)
+    # print("Found %s words" % len(words))
+    display_words(words)
 
 # the underlining if-statement will only be executed when run directly.
 # This way the boggle file can be imported into test_boggle, without having to be fully executed everytime you run test_boggle
